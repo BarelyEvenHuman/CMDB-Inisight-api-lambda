@@ -1,0 +1,400 @@
+{
+    "schema": {
+        "objectSchema": {
+            "name": "All AWS Resources",
+            "description": "Data from AWS Config report.",
+            "objectTypes": [
+                {
+                    "name": "Configuration Items",
+                    "description": "Resources from our AWS instances.",
+                    "attributes": [
+                        {
+                            "name": "nomi_ci_key",
+                            "description": "Identifier",
+                            "type": "text",
+                            "label": true
+                        },
+                        {
+                            "name": "ARN",
+                            "description": "Identifier",
+                            "type": "text"
+                        },
+                        {
+                            "name": "availabilityZone",
+                            "description": "Zone of Availability",
+                            "type": "text"
+                        },
+                        {
+                            "name": "awsAccountId",
+                            "description": "AWS account identifier",
+                            "type": "text"
+                        },
+                        {
+                            "name": "awsRegion",
+                            "description": "Region identifier",
+                            "type": "text"
+                        },
+                        {
+                            "name": "configurationItemCaptureTime",
+                            "description": "Time when item was configured",
+                            "type": "text"
+                        },
+                        {
+                            "name": "configurationItemStatus",
+                            "description": "Status of the configuration",
+                            "type": "text"
+                        },
+                        {
+                            "name": "configurationItemVersion",
+                            "description": "Versioning of the item",
+                            "type": "text"
+                        },
+                        {
+                            "name": "configurationStateId",
+                            "description": "StateId identifier",
+                            "type": "text"
+                        },
+                        {
+                            "name": "configurationStateMd5Hash",
+                            "description": "Configuration hash",
+                            "type": "text"
+                        },
+                        {
+                            "name": "relatedEvents",
+                            "description": "Related events",
+                            "type": "text"
+                        },
+                        {
+                            "name": "relationships",
+                            "description": "Resource relationships",
+                            "type": "text"
+                        },
+                        {
+                            "name": "resourceId",
+                            "description": "Resource identifier",
+                            "type": "text"
+                        },
+                        {
+                            "name": "resourceName",
+                            "description": "Name of resource",
+                            "type": "text"
+                        },
+                        {
+                            "name": "resourceType",
+                            "description": "Type of resource",
+                            "type": "text"
+                        },
+                        {
+                            "name": "supplementaryConfiguration",
+                            "description": "Other configuration",
+                            "type": "text"
+                        },
+                        {
+                            "name": "data_classification",
+                            "description": "resource tags",
+                            "type": "referenced_object",
+                            "referenceObjectTypeName": "Data Classification"
+                        },
+                        {
+                            "name": "owner",
+                            "description": "resource tags",
+                            "type": "referenced_object",
+                            "referenceObjectTypeName": "Team"
+                        },
+                        {
+                            "name": "service",
+                            "description": "resource tags",
+                            "type": "referenced_object",
+                            "referenceObjectTypeName": "Business Service Offering"
+                        },
+                        {
+                            "name": "deployment",
+                            "description": "resource tags",
+                            "type": "referenced_object",
+                            "referenceObjectTypeName": "Deployment Method"
+                        },
+                        {
+                            "name": "source_repo",
+                            "description": "resource tags",
+                            "type": "referenced_object",
+                            "referenceObjectTypeName": "Source Repo"
+                        }
+                    ]
+                },
+                {
+                    "name": "Data Classification",
+                    "description": "Information on the data",
+                    "attributes": [
+                        {
+                            "name": "Name",
+                            "description": "The value of the data classification",
+                            "type": "text",
+                            "label": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Team",
+                    "description": "Defines which team in the Org.",
+                    "attributes": [
+                        {
+                            "name": "Name",
+                            "description": "The value of the owner",
+                            "type": "text",
+                            "label": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Business Service Offering",
+                    "description": "Defines which service in the Org.",
+                    "attributes": [
+                        {
+                            "name": "Name",
+                            "description": "The name of the service",
+                            "type": "text",
+                            "label": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Deployment Method",
+                    "description": "Tells how resource was deployed.",
+                    "attributes": [
+                        {
+                            "name": "Name",
+                            "description": "The name of the deployment",
+                            "type": "text",
+                            "label": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Source Repo",
+                    "description": "Source repo URL/destination.",
+                    "attributes": [
+                        {
+                            "name": "Name",
+                            "description": "The name of the source_repo",
+                            "type": "text",
+                            "label": true
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "mapping": {
+        "objectTypeMappings": [
+            {
+                "objectTypeName": "Configuration Items",
+                "selector": "awsResources",
+                "description": "Mapping for for aws resources",
+                "attributesMapping": [
+                    {
+                        "attributeName": "nomi_ci_key",
+                        "attributeLocators": [
+                            "nomi_ci_key"
+                        ],
+                        "externalIdPart": true
+                    },
+                    {
+                        "attributeName": "ARN",
+                        "attributeLocators": [
+                            "ARN"
+                        ]
+                    },
+                    {
+                        "attributeName": "availabilityZone",
+                        "attributeLocators": [
+                            "availabilityZone"
+                        ]
+                    },
+                    {
+                        "attributeName": "awsAccountId",
+                        "attributeLocators": [
+                            "awsAccountId"
+                        ]
+                    },
+                    {
+                        "attributeName": "awsRegion",
+                        "attributeLocators": [
+                            "awsRegion"
+                        ]
+                    },
+                    {
+                        "attributeName": "configurationItemCaptureTime",
+                        "attributeLocators": [
+                            "configurationItemCaptureTime"
+                        ]
+                    },
+                    {
+                        "attributeName": "configurationItemStatus",
+                        "attributeLocators": [
+                            "configurationItemStatus"
+                        ]
+                    },
+                    {
+                        "attributeName": "configurationItemVersion",
+                        "attributeLocators": [
+                            "configurationItemVersion"
+                        ]
+                    },
+                    {
+                        "attributeName": "configurationStateId",
+                        "attributeLocators": [
+                            "configurationStateId"
+                        ]
+                    },
+                    {
+                        "attributeName": "configurationStateMd5Hash",
+                        "attributeLocators": [
+                            "configurationStateMd5Hash"
+                        ]
+                    },
+                    {
+                        "attributeName": "relatedEvents",
+                        "attributeLocators": [
+                            "relatedEvents"
+                        ]
+                    },
+                    {
+                        "attributeName": "relationships",
+                        "attributeLocators": [
+                            "relationships"
+                        ]
+                    },
+                    {
+                        "attributeName": "resourceId",
+                        "attributeLocators": [
+                            "resourceId"
+                        ]
+                    },
+                    {
+                        "attributeName": "resourceName",
+                        "attributeLocators": [
+                            "resourceName"
+                        ]
+                    },
+                    {
+                        "attributeName": "resourceType",
+                        "attributeLocators": [
+                            "resourceType"
+                        ]
+                    },
+                    {
+                        "attributeName": "supplementaryConfiguration",
+                        "attributeLocators": [
+                            "supplementaryConfiguration"
+                        ]
+                    },
+                    {
+                        "attributeName": "data_classification",
+                        "attributeLocators": [
+                            "tags.data_classification"
+                        ],
+                        "objectMappingIQL": "Name Like ${tags.data_classification}"
+                    },
+                    {
+                        "attributeName": "owner",
+                        "attributeLocators": [
+                            "tags.owner"
+                        ],
+                        "objectMappingIQL": "Name Like ${tags.owner}"
+                    },
+                    {
+                        "attributeName": "service",
+                        "attributeLocators": [
+                            "tags.service"
+                        ],
+                        "objectMappingIQL": "Name Like ${tags.service}"
+                    },
+                    {
+                        "attributeName": "deployment",
+                        "attributeLocators": [
+                            "tags.deployment"
+                        ],
+                        "objectMappingIQL":"Name Like ${tags.deployment}"
+                    },
+                    {
+                        "attributeName": "source_repo",
+                        "attributeLocators": [
+                            "tags.source_repo"
+                        ],
+                        "objectMappingIQL":"Name Like ${tags.source_repo}"
+                    }
+                ]
+            },
+            {
+                "objectTypeName": "Data Classification",
+                "selector": "awsResources.tags",
+                "description": "Mapping data_classification",
+                "attributesMapping": [
+                    {
+                        "attributeName": "Name",
+                        "attributeLocators": [
+                            "data_classification"
+                        ],
+                        "externalIdPart": true
+                    }
+                ]
+            },
+            {
+                "objectTypeName": "Team",
+                "selector": "awsResources.tags",
+                "description": "Mapping owner",
+                "attributesMapping": [
+                    {
+                        "attributeName": "Name",
+                        "attributeLocators": [
+                            "owner"
+                        ],
+                        "externalIdPart": true
+                    }
+                ]
+            },
+            {
+                "objectTypeName": "Business Service Offering",
+                "selector": "awsResources.tags",
+                "description": "Mapping service",
+                "attributesMapping": [
+                    {
+                        "attributeName": "Name",
+                        "attributeLocators": [
+                            "service"
+                        ],
+                        "externalIdPart": true
+                    }
+                ]
+            },
+            {
+                "objectTypeName": "Deployment Method",
+                "selector": "awsResources.tags",
+                "description": "Mapping deployment",
+                "attributesMapping": [
+                    {
+                        "attributeName": "Name",
+                        "attributeLocators": [
+                            "deployment"
+                        ],
+                        "externalIdPart": true
+                    }
+                ]
+            },
+            {
+                "objectTypeName": "Source Repo",
+                "selector": "awsResources.tags",
+                "description": "Mapping source_repo",
+                "attributesMapping": [
+                    {
+                        "attributeName": "Name",
+                        "attributeLocators": [
+                            "source_repo"
+                        ],
+                        "externalIdPart": true
+                    }
+                ]
+            }
+        ]
+    }
+}

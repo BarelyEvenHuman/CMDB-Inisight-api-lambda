@@ -1,0 +1,4 @@
+boto3==1.17.32
+aws-lambda-powertools
+requests==2.26.0
+snowflake-connector-python[pandas]==2.5.0
